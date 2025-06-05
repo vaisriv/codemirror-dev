@@ -13,6 +13,7 @@ exports.core = [
   "codemirror",
 ]
 exports.nonCore = [
+  "lang-bibtex",
   "lang-javascript",
   "lang-java",
   "lang-json",

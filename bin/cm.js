@@ -79,14 +79,18 @@ function assertInstalled() {
 }
 
 function install(arg = null) {
-  let base = arg == "--ssh" ? "git@github.com:codemirror/" : "https://github.com/codemirror/"
+  let base = arg == "--ssh" ? "git@github.com:" : "https://github.com/"
+
+  let cmGH = "codemirror/"
+  let vai_cmGH = "vaisriv/codemirror-"
+
   if (arg && arg != "--ssh") help(1)
 
   for (let pkg of packages) {
     if (fs.existsSync(pkg.dir)) {
       console.warn(`Skipping cloning of ${pkg.name} (directory exists)`)
     } else {
-      let origin = base + (pkg.name == "codemirror" ? "basic-setup" : pkg.name) + ".git"
+      let origin = base + (pkg.name == "lang-bibtex" ? vai_cmGH : cmGH ) + (pkg.name == "codemirror" ? "basic-setup" : pkg.name) + ".git"
       run("git", ["clone", origin, pkg.dir])
     }
   }
