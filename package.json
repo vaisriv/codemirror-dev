@@ -4,6 +4,7 @@
     "test": "node bin/cm.js test",
     "test-node": "node bin/cm.js test --no-browser",
     "prepare": "node bin/cm.js build",
+    "prepare-readme": "node bin/cm.js build-readme",
     "dev": "node bin/cm.js devserver"
   },
   "author": "Marijn Haverbeke <marijn@haverbeke.berlin>",
